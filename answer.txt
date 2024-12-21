@@ -1,0 +1,1 @@
+Có, Java cho phép tạo nhiều phương thức khởi tạo với các tham số khác nhau trong cùng một lớp. Đó là nạp chồng phương thức khởi tạo. Khi tạo một constructor để khởi tạo DVD bằng tiêu đề và một constructor khác để khởi tạo DVD bằng danh mục, Java có thể phân biệt giữa các constructor này dựa trên kiểu và thứ tự của tham số.

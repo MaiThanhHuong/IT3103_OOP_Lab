@@ -1,0 +1,10 @@
+1. What class should implement the Comparable interface?
+=> Lớp Media nên implement giao diện Comparable<Media> vì tất cả các loại phương tiện (media) như DigitalVideoDisc, Book, v.v., đều kế thừa từ Media. Điều này đảm bảo chúng ta có thể so sánh các loại media một cách đồng nhất trong hệ thống.
+2. In those classes, how should you implement the compareTo()method be to reflect the ordering that we want?
+=> Phương thức compareTo() nên được triển khai trong lớp Media với logic sắp xếp mặc định:
+	Thứ tự ưu tiên 1: Theo tiêu đề (title), sắp xếp theo thứ tự bảng chữ cái.
+	Thứ tự ưu tiên 2: Theo giá (cost), sắp xếp tăng dần.
+3. Can we have two ordering rules of the item (by title then cost and by cost then title) if we use this Comparable interface approach?
+=> Không, giao diện Comparable chỉ hỗ trợ một quy tắc sắp xếp mặc định duy nhất vì chỉ có một phương thức compareTo(). Nếu muốn có nhiều quy tắc sắp xếp (ví dụ, theo tiêu đề rồi giá và theo giá rồi tiêu đề), chúng ta cần sử dụng thêm các lớp Comparator. Điều này linh hoạt hơn, vì mỗi Comparator có thể định nghĩa một cách sắp xếp riêng.
+4. Suppose the DVDs has a different ordering rule from the other media types, that is by title, then decreasing length, then cost. How would you modify your code to allow this?
+=>Trong trường hợp này, lớp DigitalVideoDisc cần override lại phương thức compareTo() để định nghĩa quy tắc sắp xếp riêng cho DVD.
